@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Jest
+name: CI
 
 # Controls when the workflow will run
 on:
@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  run-test:
+  test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -29,7 +29,14 @@ jobs:
       - name: Install node modules
         run: yarn
 
-      - name: Run test
+      - name: Test with ESLint
+        run: yarn eslint ./
+
+      - name: Test with TypeScript
+        run: yarn tsc --noEmit
+
+      - name: Run with Jest
         run: yarn test
+
 
 
