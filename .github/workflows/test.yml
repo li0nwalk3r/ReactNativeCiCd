@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: ESLint
 
 # Controls when the workflow will run
 on:
@@ -25,18 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Install node modules
-        run: yarn
+      - name: Test with ESLint
+        run: yarn eslint ./
 
-#      - name: Test with ESLint
-#        run: yarn eslint ./
-#
-#      - name: Test with TypeScript
-#        run: yarn tsc --noEmit
-
-      - name: Run with Jest
-        run: yarn test
+      - name: Test with TypeScript
+        run: yarn tsc --noEmit
 
 
 
