@@ -29,11 +29,11 @@ jobs:
       - name: Install node modules
         run: yarn
 
-#      - name: Test with ESLint
-#        run: yarn eslint ./
-#
-#      - name: Test with TypeScript
-#        run: yarn tsc --noEmit
+      - name: Test with ESLint
+        run: yarn eslint ./
+
+      - name: Test with TypeScript
+        run: yarn tsc --noEmit
 
       - name: Run with Jest
         run: yarn test
