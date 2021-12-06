@@ -31,15 +31,15 @@ jobs:
         run: yarn
 
       - name: Test with ESLint
-        id: jest
+        if: ${{ always() && steps.yarnInstall.outcome == 'success'}}
         run: yarn eslint ./
 
       - name: Test with TypeScript
-        if: ${{ always() && steps.jest.outcome == 'success'}}
+        if: ${{ always() && steps.yarnInstall.outcome == 'success'}}
         run: yarn tsc --noEmit
 
       - name: Test with Jest
-        if: ${{ always() && steps.jest.outcome == 'failure'}}
+        if: ${{ always() && steps.yarnInstall.outcome == 'success'}}
         run: yarn test
 
 
