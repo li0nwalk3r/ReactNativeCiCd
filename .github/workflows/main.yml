@@ -35,11 +35,11 @@ jobs:
         run: yarn eslint ./
 
       - name: Test with TypeScript
-        if: ${{ steps.jest.outcome == 'success'}}
+        if: ${{ always() && steps.jest.outcome == 'success'}}
         run: yarn tsc --noEmit
 
       - name: Test with Jest
-        if: ${{ steps.jest.outcome == 'failure'}}
+        if: ${{ always() && steps.jest.outcome == 'failure'}}
         run: yarn test
 
 
