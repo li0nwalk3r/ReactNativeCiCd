@@ -30,12 +30,15 @@ jobs:
         run: yarn
 
       - name: Run with Jest
+        if: always()
         run: yarn test
 
       - name: Test with ESLint
+        if: always()
         run: yarn eslint ./
 
       - name: Test with TypeScript
+        if: always()
         run: yarn tsc --noEmit
 
 
