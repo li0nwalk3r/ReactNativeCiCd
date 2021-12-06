@@ -28,18 +28,19 @@ jobs:
       # Runs a single command using the runners shell
       - name: Install node modules
         run: yarn
+        continue-on-error: false
 
       - name: Run with Jest
-        if: always()
         run: yarn test
+        continue-on-error: false
 
       - name: Test with ESLint
-        if: always()
         run: yarn eslint ./
+        continue-on-error: true
 
       - name: Test with TypeScript
-        if: always()
         run: yarn tsc --noEmit
+        continue-on-error: true
 
 
 
