@@ -1,11 +1,6 @@
 app_identifier("com.goodwill.ReactNativeCiCd") # The bundle identifier of your app
 apple_id("gary.bouchentouf@icloud.com") # Your Apple email address
 
-itc_team_id("122335677") # App Store Connect Team ID
-team_id("DJHG8Z48X6") # Developer Portal Team ID
-
-app_identifier(ENV["DEVELOPER_APP_IDENTIFIER"])
-apple_id(ENV["FASTLANE_APPLE_ID"])
 # itc_team_id(ENV["APP_STORE_CONNECT_TEAM_ID"])
 # team_id(ENV["DEVELOPER_PORTAL_TEAM_ID"])
 
