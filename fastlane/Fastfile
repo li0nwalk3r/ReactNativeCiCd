@@ -48,7 +48,8 @@ platform :ios do
     increment_build_number(xcodeproj: "./ios/ReactNativeCiCd.xcodeproj")
 
     cocoapods(
-      clean_install: true
+      clean_install: true,
+      podfile: "./ios/Podfile"
     )
 
     match(
