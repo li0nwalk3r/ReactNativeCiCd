@@ -64,7 +64,7 @@ platform :ios do
 
     gym(
       configuration: "Release",
-      workspace: "ReactNativeCiCd.xcworkspace",
+      workspace: "./ios/ReactNativeCiCd.xcworkspace",
       scheme: "ReactNativeCiCd",
       export_method: "app-store",
       export_options: {
