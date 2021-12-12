@@ -54,7 +54,7 @@ platform :ios do
 
     match(
       type: 'appstore',
-      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+      app_identifier: DEVELOPER_APP_IDENTIFIER,
       git_basic_authorization: GIT_AUTHORIZATION,
       readonly: true,
       keychain_name: keychain_name,
@@ -75,8 +75,8 @@ platform :ios do
     )
 
     pilot(
-      apple_id: "#{DEVELOPER_APP_ID}",
-      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+      apple_id: DEVELOPER_APP_ID,
+      app_identifier: DEVELOPER_APP_IDENTIFIER,
       skip_waiting_for_build_processing: false,
       skip_submission: true,
       distribute_external: false,
