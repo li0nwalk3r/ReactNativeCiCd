@@ -14,6 +14,13 @@ jobs:
     runs-on: macOS-latest
 
     steps:
+      - name: Create env file
+        run: |
+          touch .env
+          echo API_ENDPOINT="https://xxx.execute-api.us-west-2.amazonaws.com" >> .env
+          echo API_KEY=${{ secrets.TEMP_KEYCHAIN_USER }} >> .env
+          cat .env
+
       - name: Checkout repository
         uses: actions/checkout@v1
 
